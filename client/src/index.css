@@ -25,6 +25,9 @@ html , body ,#root {
 .tcen {
     text-align: center;
 }
+.jcsa {
+    justify-content: space-around;
+}
 
 .border {
     border: 2px solid red;
@@ -56,4 +59,20 @@ p {
 
 input , button {
     font-family: 'Raleway', sans-serif; 
+}
+a {
+    color: #0000EE;
+    text-decoration: none;
+}
+
+.oth-div {
+    border: 1px solid grey;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+.oth-name {
+    margin-left: 10px;
+}
+.oth-price {
+    margin-left: 70px;
 }

@@ -1,0 +1,87 @@
+#home {
+    background-color: #FAFAFA;
+}
+
+.stock-detail {
+    width: 80%;
+}
+.other-stock {
+    width: 20%;
+}
+.stock-detail {
+    padding-left: 1rem;
+}
+.stock-chart {
+    object-fit: cover;
+    width: 100%;
+    height: 400px;
+}
+.stock-name {
+    font-family: 'Raleway', sans-serif; 
+}
+
+.time-btn {
+    border: none;
+    outline: none;
+    padding: 0.4rem;
+    margin-top: 0.5rem;
+    background-color: #FAFAFA;
+    cursor: pointer;
+    font-family: 'Prompt', sans-serif;
+}
+
+.buy-div {
+    margin-top: 0.3rem;
+}
+
+.buy-btns {
+    outline: none;
+    border: none;
+    background-color: #00C805;
+}
+
+.qty-ip {
+    outline: none;
+    border: none;
+    height: 35px;
+    padding: 0 5px ;
+    font-family: 'Prompt', sans-serif;
+    font-size: 1.2rem;
+    width: 100px;
+}
+
+.QTY {
+    padding: 0 0.6rem ;
+    color: #ffffff;
+    font-size: 2rem;
+    border-radius: 0.7rem 0 0 0.7rem;
+}
+
+.QTY2 {
+    padding: 0 0.6rem ;
+    color: #ffffff;
+    font-size: 2rem;
+    border-radius: 0 0.7rem 0.7rem 0;
+}
+
+.BUY {
+    color: #ffffff;
+    padding: 0.7rem ;
+    /* border-radius: 0 1rem 1rem 0; */
+    font-weight: 600;
+    width: 175px;
+    margin-top: 1rem;
+    border-radius: 0.3rem;
+    font-weight: 900;
+}
+.BUY:hover {
+    background-color: #05ff0d;
+    cursor: pointer;
+}
+
+.comp {
+    margin: 0.4rem 0;
+}
+.comp-logo {
+    height: 40px;
+}
