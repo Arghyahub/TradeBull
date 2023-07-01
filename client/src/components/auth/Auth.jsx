@@ -7,10 +7,12 @@ const Auth = () => {
 
   const signup = (e) => {
     e.preventDefault() ;
+    // Calls backend and Signup
   }
 
   const login = (e) => {
     e.preventDefault() ;
+    // Calls backend and Loggs in
   }
 
   return (
@@ -44,7 +46,7 @@ const Auth = () => {
                   <img src={`images/${Pass? 'eyenot':'eye'}.ico`} alt="" />
                 </button>
               </div>
-              <button type="submit" className='curpoi auth-sub'>Sign up</button>
+              <button type="submit" className='curpoi auth-sub' onClick={signup}>Sign up</button>
             </form>
 
             <p>Have an account? 
@@ -64,7 +66,7 @@ const Auth = () => {
                   <img src={`images/${Pass? 'eyenot':'eye'}.ico`} alt="" />
                 </button>
               </div>
-              <button type="submit" className='curpoi auth-sub'>Log in</button>
+              <button type="submit" className='curpoi auth-sub' onClick={login}>Log in</button>
             </form>
 
             <p>Dont you have an account?

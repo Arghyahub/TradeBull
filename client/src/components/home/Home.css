@@ -85,3 +85,48 @@
 .comp-logo {
     height: 40px;
 }
+
+
+@media screen and (max-width: 600px) {
+    .stock-detail {
+        width: 75%;
+    }
+    .other-stock {
+        width: 25%;
+    }
+    .oth-name {
+        font-size: 0.8rem;
+    }
+    .oth-price {
+        font-size: 0.8rem;
+    }
+    .home-nav > img {
+        height: 35px ;
+    }
+    .home-nav > h4 {
+        font-size: 0.8rem;
+    }
+    .navlog {
+        font-size: 0.8rem;
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    .home-main {
+        flex-direction: column !important;
+    }
+    .stock-detail {
+        width: calc(100% - 1rem);
+    }
+    .other-stock {
+        width: calc(100% - 1rem);
+        margin: 0.5rem;
+    }
+    .navlog {
+        right: 0 !important;
+    }
+    .stock-chart {
+        width: 95%;
+    }
+}

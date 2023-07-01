@@ -1,0 +1,87 @@
+#Profile {
+    background-color: #FAFAFA;
+}
+
+.profile-nav {
+    position: absolute;
+    top: 0;
+}
+
+.prof-logo {
+    padding-left: 5px;
+}
+.prof-logo > img {
+    height: 45px;
+    margin-right: 4px;
+}
+.prof-options {
+    position: absolute;
+    right: 10px;
+}
+.prof-ln {
+    font-weight: 500;
+    margin-right: 15px;
+}
+.prof-log {
+    outline: none;
+    border: none;
+    background-color: #FAFAFA;
+    font-weight: 500;
+    color: red;
+}
+.prof-log:hover {
+    color: rgb(251, 102, 102);
+}
+
+.prof-img {
+    height: 150px;
+    position: relative;
+    top: -20px;
+}
+
+.prof-stats {
+    margin: 0.5rem 0;
+    min-width: 180px;
+    justify-content: space-between;
+}
+
+.gain {
+    font-weight: 600;
+    color: green;
+    font-size: 1.1rem;
+}
+.loss {
+    font-weight: 400;
+    color: red;
+}
+
+.history-table {
+    border: 1px solid grey;
+    padding: 0.5rem;
+    height: 330px;
+    width: 500px;
+    overflow: scroll;
+}
+
+td {
+    border-top: 1px solid grey;
+}
+
+@media screen and (max-width: 520px) {
+    .history-table {
+        padding: 0.2rem;
+        height: 330px;
+        width: 350px;
+        font-size: 0.8rem;
+    }
+    .prof-img  {
+        height: 70px;
+    }
+    .usr-name {
+        font-size: 1.1rem;
+    }
+    .trade-hist {
+        margin: 0.1rem 0 0.6rem 0;
+        font-size: 1.1rem;
+    }
+}
