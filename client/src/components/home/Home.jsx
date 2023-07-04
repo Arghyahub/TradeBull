@@ -5,6 +5,8 @@ import './Home.css'
 import Navbar from '../navbar/Navbar';
 import { useParams } from 'react-router-dom';
 
+// const key=import.meta.env.VITE_APIKEY;
+
 const Home = () => {
   const navigate = useNavigate() ;
   const { stockname } = useParams() ;
@@ -22,6 +24,11 @@ const Home = () => {
   const [CompanyList, setCompanyList] = useState([{name: 'APPL', cost: '199'}, {name: 'Google', cost: '201'}, {name: 'Microsoft', cost: '500'},{name: 'NVIDIA', cost: '900'}]) ;
 
   const buyQtyIp = useRef(null) ;
+
+  useEffect(() => {
+  }, [])
+  
+
 
   useEffect(() => {
     buyQtyIp.current.value = 0;
@@ -82,7 +89,6 @@ const Home = () => {
 
         <div className="other-stock flcol">
           { CompanyList.map((elem,ind) => {
-              console.log((elem.name).toLowerCase() , (StockName).toLowerCase() ) ;
               if ((elem.name).toLowerCase() !== (StockName).toLowerCase() ) return(
               <div key={`comp${ind}`} className='oth-div' onClick={() => navigate(`/${elem.name}`)}>
                 <p className='oth-name'>{elem.name}</p>
