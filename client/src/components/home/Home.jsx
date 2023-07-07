@@ -7,6 +7,9 @@ import { useParams } from 'react-router-dom';
 
 const stockAPI = import.meta.env.VITE_API;
 
+const companyInfo = import.meta.env.VITE_INFO;
+const tok = import.meta.env.VITE_TOK;
+
 const Home = () => {
   const navigate = useNavigate();
   let { stockname } = useParams();
@@ -16,7 +19,7 @@ const Home = () => {
   const [TimeFilter, setTimeFilter] = useState('1D');
 
   const [stockData, setStockData] = useState({});
-  const [CompanyDetails, setCompanyDetails] = useState({
+  const [CompanyDetails, setCompanyDetails] = useState({ // Dummy data
     "marketCapitalization": 1415993,
     "name": "Apple Inc",
     "shareOutstanding": 4375.47998046875,
@@ -24,10 +27,32 @@ const Home = () => {
     "finnhubIndustry": "Technology"
   })
   // company with dummy data
-  const [CompanyList, setCompanyList] = useState([{ name: 'AAPL', cost: '199' }, { name: 'GOOGL', cost: '201' }, { name: 'MSFT' , cost : '100' }]);
+  const [CompanyList, setCompanyList] = useState([{ name: 'AAPL', cost: '199' }, { name: 'GOOGL', cost: '201' }, { name: 'MSFT', cost: '100' }]);
 
   const buyQtyIp = useRef(null);
 
+  const getCompanyData = async () => {
+    const sname = (stockname)? stockname:"AAPL";
+    const res = await fetch(`${companyInfo}symbol=${sname}&token=${tok}`, {
+        method: "GET"
+    })
+    const json = await res.json() ;
+    setCompanyDetails(json);
+  }
+
+  useEffect(() => {
+    buyQtyIp.current.value = 0;
+    if (stockname) {
+      setStockName(stockname);
+    }
+    else {
+      setStockName('AAPL');
+    }
+
+    getCompanyData();
+    
+  }, [stockname])
+  
   useEffect(() => {
     const socket = new WebSocket(stockAPI);
 
@@ -55,21 +80,7 @@ const Home = () => {
     return () => {
       socket.close();
     };
-
   }, [])
-
-
-
-  useEffect(() => {
-    buyQtyIp.current.value = 0;
-    if (stockname) {
-      setStockName(stockname);
-    }
-    else {
-      setStockName('AAPL') ;
-    }
-
-  }, [stockname])
 
   const setQuantity = (num) => {
     buyQtyIp.current.value = num;
