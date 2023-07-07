@@ -31,8 +31,7 @@ const Home = () => {
 
   const buyQtyIp = useRef(null);
 
-  const getCompanyData = async () => {
-    const sname = (stockname)? stockname:"AAPL";
+  const getCompanyData = async (sname) => {
     const res = await fetch(`${companyInfo}symbol=${sname}&token=${tok}`, {
         method: "GET"
     })
@@ -44,12 +43,12 @@ const Home = () => {
     buyQtyIp.current.value = 0;
     if (stockname) {
       setStockName(stockname);
+      getCompanyData(stockname) ;
     }
     else {
       setStockName('AAPL');
+      getCompanyData('AAPL') ;
     }
-
-    getCompanyData();
     
   }, [stockname])
   
